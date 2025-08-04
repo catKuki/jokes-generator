@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', cursive;
+}
+
+.wrap{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(243, 196, 39);
+    columns: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addJoke {
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 60px;              
+    transform-origin: center center;
+    transition: transform 1s;
+    border: none;
+    background-color: #f0c040;
+    cursor: pointer;
+}
+
+.addJokePopup{
+    width: 600px;
+    min-height: 400px;
+    background-color: rgb(141, 119, 48);
+    position: fixed;
+    top: 100px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    display: none;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 50px;
+    line-height: 60px;
+    transform-origin: center center;
+}
+.addJokePopup textarea{
+    width: 80%;
+    height: 200px;
+    padding: 20px;
+    font-family: Montserrat;
+    border: none;
+    outline-color: rgb(227, 167, 89);
+    resize: none;
+    margin-bottom: 20px;
+    
+    
+}
+.addJokePopup input{
+    width: 80%;
+    height: 60px;
+    padding: 0 20px;
+    font-family: Montserrat;
+    border: none;
+    outline-color: rgb(227, 167, 89);
+    margin-bottom: 20px;
+}
+.addJokePopup button{
+    padding: 20px 30px;
+    background-color: #333;
+    color: #fff;
+    font-family: Montserrat;
+    border: none;
+    cursor: pointer;
+    overflow:none;
+}
+header{
+    height: 10vh;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding:  0 50px; */
+    border-bottom: 2px solid #333;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo h5 {
+    font-size: 32px;
+}
+.logo p{
+    font-size: 12px;
+}
+header .logo img{
+    width: 50px;
+    margin-right: 10px;
+}
+
+header button{
+    border: 2px solid #333;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    border-radius: 50%;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 24px;
+    cursor: pointer;
+}
+footer{
+    height: 10vh;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #333;
+}
+
+main{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.jokeContainer{
+    font-size: 36px;
+    text-align: center;
+    font-weight: 800;
+}
+main button{
+    padding: 20px 50px;
+    border: 1px solid #333;
+    background-color: transparent;
+    margin-top: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+header button {
+    transition: transform 0.3s ease;
+}
+
+header button.rotating {
+    transition: none;
+}
+
+.addJoke:hover{
+    transform: rotate(180deg);
+    transition: 1s;
+    
+}
+
+.closePopup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+}
+.jokeCount {
+    position: absolute;
+    top: 590px;
+    left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+@media screen and (max-width: 900px) {
+    .addJokePopup{
+        width: 90%;
+        padding: 30px 20px;
+        top: 50px;
+    }   
+    .addJokePopup textarea{
+        width: 100%;
+    }
+    .addJokePopup input{
+        width: 100%;
+    }
+    .closePopup{
+        top: -10px;
+        right: 5px;
+    }
+    .jokeCount{
+        display: none;
+    }
+}
+
+

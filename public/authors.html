@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список авторів</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.10.0/axios.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">
+                <img src="./img/logo.png" alt="logo">
+                <div class="logoText">
+                    <h5>Jokes</h5>
+                    <p>AUTHORS</p>
+                </div>
+            </div>
+            <a href="/" style="text-decoration:none;">
+                <button>&larr;</button>
+            </a>
+        </header>
+
+        <main>
+            <h2>Список авторів</h2>
+            <ul id="authorsList"></ul>
+        </main>
+
+        <footer>
+            <p>&copy; <span id="year"></span></p>
+        </footer>
+    </div>
+
+    <style>
+        #authorsList {
+    list-style-type: none;
+    padding: 0;
+    font-size: 20px;
+    margin-top: 20px;
+}
+#authorsList li {
+    margin-bottom: 10px;
+    background-color: #fff6b4;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    width: fit-content;
+}
+    </style>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        axios.get('/authors')
+            .then(res => {
+                const list = document.getElementById('authorsList');
+                res.data.forEach(author => {
+                    const li = document.createElement('li');
+                    li.textContent = author;
+                    list.appendChild(li);
+                });
+            })
+            .catch(err => {
+                console.error('Помилка при завантаженні авторів', err);
+            });
+    </script>
+</body>
+</html>

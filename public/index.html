@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="https://w7.pngwing.com/pngs/369/451/png-transparent-computer-icons-comedy-humour-joke-comedian-comedy.png"> 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.10.0/axios.js' integrity='sha512-htoh0mqlLP00vZAa+tZAuuJYiz1SOe9V6P5i5VLU4Tt63Vmo1NikZVu0AeM1cCochs+0KraOQeUeH6GPTuuSxQ==' crossorigin='anonymous'></script>
+</head>
+<body>
+    
+
+    
+    <div class="wrap">
+
+        <div class="addJokePopup">
+            <span class="closePopup">&times;</span>
+            <textarea id="newJoke" placeholder="Розкажи жарт"></textarea>
+            <input type="text" id="author" placeholder="Автор">
+            <button id="sendJoke">Відправити</button>
+        </div>
+        
+        <header>
+            <div class="logo">
+                <img src="./img/logo.png" alt="logo">
+                <div class="logoText">
+                    <h5>Jokes</h5>
+                    <p>GENERATOR</p>
+                </div>
+            </div>
+
+
+            <button id="addJoke" class="addJoke">+</button>
+           
+        </header>
+
+        <main>
+            <div class="jokeContainer"></div>
+            <button id="getJoke">Get Joke</button>
+            <div class="jokeCount"></div>
+        </main>
+
+        <footer>
+            <p>Copyright &copy; <span id="year"></span></p>
+        </footer>
+
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
