@@ -155,6 +155,15 @@ app.get('/authors', async (req, res) => {
 app.get('/authors-page', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'authors.html'));
 });
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// });
+
+// Вказуємо явно, що головна — це jokes.html (не рекомендовано)
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'main.html'));
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

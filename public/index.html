@@ -1,56 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jokes v3</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="https://w7.pngwing.com/pngs/369/451/png-transparent-computer-icons-comedy-humour-joke-comedian-comedy.png"> 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Про Сервіс Жартів</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="https://w7.pngwing.com/pngs/369/451/png-transparent-computer-icons-comedy-humour-joke-comedian-comedy.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
 
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+      margin: 0;
+      padding: 0;
+    }
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.10.0/axios.js' integrity='sha512-htoh0mqlLP00vZAa+tZAuuJYiz1SOe9V6P5i5VLU4Tt63Vmo1NikZVu0AeM1cCochs+0KraOQeUeH6GPTuuSxQ==' crossorigin='anonymous'></script>
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto 0 auto;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #388E3C;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #777;
+      margin-left: 50px;
+    }
+
+    body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, 
+    #f9f871, 
+    #fcb3fc, 
+    #a3e4f9, 
+    #b9fbc0, 
+    #fff5ba
+  );
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+  </style>
 </head>
 <body>
-    
 
-    
-    <div class="wrap">
+  <div class="container">
+    <h1>Про сервіс "Jokes Generator"</h1>
 
-        <div class="addJokePopup">
-            <span class="closePopup">&times;</span>
-            <textarea id="newJoke" placeholder="Розкажи жарт"></textarea>
-            <input type="text" id="author" placeholder="Автор">
-            <button id="sendJoke">Відправити</button>
-        </div>
-        
-        <header>
-            <div class="logo">
-                <img src="./img/logo.png" alt="logo">
-                <div class="logoText">
-                    <h5>Jokes</h5>
-                    <p>GENERATOR</p>
-                </div>
-            </div>
-
-
-            <button id="addJoke" class="addJoke">+</button>
-           
-        </header>
-
-        <main>
-            <div class="jokeContainer"></div>
-            <button id="getJoke">Get Joke</button>
-            <div class="jokeCount"></div>
-        </main>
-
-        <footer>
-            <p>Copyright &copy; <span id="year"></span></p>
-        </footer>
-
+    <div class="section">
+      <h2>ℹ️ Що це?</h2>
+      <p>Це простий та веселий сервіс, де кожен може додати свій жарт, або прочитати випадковий. Жарти перевіряються модератором і можуть бути опубліковані після схвалення.</p>
     </div>
-    <script src="./main.js"></script>
+
+    <div class="section">
+      <h2>👨‍💻 Розробники</h2>
+      <p>Цей проєкт був створений ентузіастами веб-розробки для практики роботи з <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>Telegram Bot API</strong> та фронтендом на <strong>HTML/CSS/JS</strong>.</p>
+    </div>
+
+    <div class="section">
+      <h2>📅 Перша версія</h2>
+      <p>Дата виходу: <span id="firstRelease"></span></p>
+    </div>
+    <button onclick="location.href='jokes.html'">Перейти до жартів</button>
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> Jokes Generator
+  </footer>
+
+  <script>
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    
+    const firstReleaseDate = new Date(2024, 6, 1); 
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById("firstRelease").textContent = firstReleaseDate.toLocaleDateString('uk-UA', options);
+  </script>
+
 </body>
 </html>
