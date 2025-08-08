@@ -10,7 +10,7 @@
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-
+      text-align: center;
       margin: 0;
       padding: 0;
     }
@@ -94,12 +94,7 @@
 
     <div class="section">
       <h2>👨‍💻 Розробники</h2>
-      <p>Цей проєкт був створений ентузіастами веб-розробки для практики роботи з <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>Telegram Bot API</strong> та фронтендом на <strong>HTML/CSS/JS</strong>.</p>
-    </div>
-
-    <div class="section">
-      <h2>📅 Перша версія</h2>
-      <p>Дата виходу: <span id="firstRelease"></span></p>
+      <p>Цей проєкт був створений для практики роботи з <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>Telegram Bot API</strong> та фронтендом на <strong>HTML/CSS/JS</strong>.</p>
     </div>
     <button onclick="location.href='jokes.html'">Перейти до жартів</button>
   </div>
@@ -107,16 +102,6 @@
   <footer>
     &copy; <span id="year"></span> Jokes Generator
   </footer>
-
-  <script>
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    
-    const firstReleaseDate = new Date(2024, 6, 1); 
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById("firstRelease").textContent = firstReleaseDate.toLocaleDateString('uk-UA', options);
-  </script>
 
 </body>
 </html>
